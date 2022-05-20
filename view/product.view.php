@@ -13,18 +13,21 @@ $listaProductos=$producto->getAll();
         </a>
     </h1>
 
-<?php 
+    <?php 
 	session_start();
 	if(isset($_SESSION['message'])){
-		?>
-		<div class="alert alert-info text-center" style="margin-top:20px;">
-			<?php echo $_SESSION['message']; ?>
-		</div>
-		<?php
+	?>
+        <div class="alert alert-<?php echo ($_SESSION['error']) ?  "danger" :  "success"; ?> alert-dismissible fade show" role="alert">
+            <?php echo $_SESSION['message']; ?>
 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+	<?php
 		unset($_SESSION['message']);
 	}
-?>
+    ?>
 
     <table id="tableProductos" class="display" style="width:100%">
         <thead>
@@ -53,7 +56,7 @@ $listaProductos=$producto->getAll();
                   <i class="bi bi-pencil-square"></i>
                 </a>
               
-                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="">
+                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" data-whatever="<?php echo $prod->__GET('uid'); ?>">
                   <i class="bi bi-trash-fill"></i>
                 </button>
               </td>
@@ -75,33 +78,31 @@ $listaProductos=$producto->getAll();
         </tfoot>
     </table>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">¿Continuar con la eliminación del producto?</h5>
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Continuar con la eliminación del producto?</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true">&times;</span>
             </button>
-          </div>
-          <div class="modal-body">
-            <div class="mx-auto" width="100%">
-              <h3>¿Segur@ que desea continuar?</h3>
             </div>
-            <form action="../Controllers/crudProducto.php" method="post">
-              <div class="form-group">
-                <input type="hidden" class="form-control" name="uid" id="recipient-name">
-                <input type='hidden' name='delete' value='delete'>
-                <div class="mx-auto" width="300px">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="bi bi-arrow-bar-left"> </i>Cancelar</button>
-                  <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"> </i>Eliminar Producto</button>
-                </div>
-              </div>
-            </form>
+            <div class="modal-body">
+                                        
+            </div>
+            <div class="modal-footer">
+                <form action='../controller/product.crud.php' method="post">
 
-
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="uid" id="recipient-name">
+                        <input type='hidden' name='delete' value='delete'>
+                    </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> Cancelar</button>
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"> </i>Eliminar Producto</button>
+                </form>
+            </div>
+            
         </div>
-      </div>
     </div>
 
   </main>

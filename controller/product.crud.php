@@ -25,5 +25,8 @@ $prod = new ProductModel();
 
         $prod->edit($prod);
         header('Location: ../view/product.view.php');
-    }
+    }elseif(isset($_POST['delete'])) {
+		$prod->delete($_POST['uid']);
+		header('Location: ../view/product.view.php');
+  }
 ?>

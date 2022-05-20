@@ -68,6 +68,10 @@ class ProductModel {
             $sql = "DELETE FROM product WHERE uid = ?";
             $stm = $this->pdo->prepare($sql);
             $stm->execute(array($uid));
+
+            $_SESSION['error'] = false;
+            $_SESSION['message'] = ( $stm ) ? 'PRODUCTO ELIMINADO CON EXITO' : 'NO SE PUDO ELIMIAR EL PRODUCTO';
+
         } catch (Exception $e){
             $_SESSION['error'] = true;
             $_SESSION['message'] = "ERROR: eliminando producto" . $e->getMessage();
