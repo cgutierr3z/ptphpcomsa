@@ -7,7 +7,7 @@ $listaProductos=$producto->getAll();
 ?>
   <!-- Aquí el código HTML de la aplicación -->
   <main role="main" class="container" >
-    <h1>Lista de productos
+    <h1>Listado de productos
         <a class="btn btn-primary" role="button"  href="#addnew" data-toggle="modal">
             <i class="bi bi-plus-square-fill"> </i> Añadir Nuevo Producto
         </a>

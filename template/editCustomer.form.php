@@ -7,8 +7,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
 
-            <form action='../controller/customer.crud.php' method='post' class="needs-validation" novalidate>
-
+            <form action='../controller/customer.crud.php' method='post' class="needs-validation2" >
+                
                 <div class="modal-body">
                     <div class="container-fluid">
 
@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
-                                <label for="validationCustom06">Apellido</label>
+                                <label for="validationCustom06>">Apellido</label>
                                 <input type="text" class="form-control" id="validationCustom06" name="lname" value="<?php echo $cli->__GET('lname'); ?>" required>
                                 <div class="invalid-feedback">
                                     Campo obligaorio.
@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type='hidden' name='edit' value='edit'>                        
+                        <input type='hidden' class="form-control"  name='edit' value='edit'>                        
                     </div> 
                 </div>
                 <div class="modal-footer">
@@ -57,7 +57,7 @@
                 </div>
             </form>
             
-
+            
 
         </div>
     </div>

@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col-md mb-4">
-                                <label for="validationCustom02">Email</label>
+                                <label for="validationCustom03">Email</label>
                                 <input type="email" class="form-control" id="validationCustom03" name="email" required>
                                 <div class="invalid-feedback">
                                     Campo obligaorio.
@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-row">                  
                             <div class="col-md mb-4">
-                                <label for="validationCustom05">Direccion</label>
+                                <label for="validationCustom04">Direccion</label>
                                 <input type="text" class="form-control" id="validationCustom04" name="address" required>
                                 <div class="invalid-feedback">
                                     Campo obligaorio.
@@ -74,7 +74,7 @@
                 });
             }, false);
             })();
-                    </script>
+            </script>
 
         </div>
     </div>

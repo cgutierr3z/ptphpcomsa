@@ -33,10 +33,10 @@
                     <a class="nav-link" href="product.view.php">Modulo Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Modulo Clientes<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="customer.view.php">Modulo Clientes<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Modulo Ventas<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="sale.view.php">Modulo Ventas<span class="sr-only">(current)</span></a>
                 </li>
                 </ul>
             </div>

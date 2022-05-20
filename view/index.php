@@ -9,8 +9,8 @@
         ventas realizadas de acuerdo al stock de cada producto y ademas se tendra acceso a 
         los informes solicitados.</p>
       <a class="btn btn-lg btn-outline-primary" href="product.view.php" role="button">Ir a Modulo Producto &raquo;</a>
-      <a class="btn btn-lg btn-outline-primary" href="#" role="button">Ir a Modulo Clientes &raquo;</a>
-      <a class="btn btn-lg btn-outline-primary" href="#" role="button">Ir a Modulo Ventas &raquo;</a>
+      <a class="btn btn-lg btn-outline-primary" href="customer.view.php" role="button">Ir a Modulo Clientes &raquo;</a>
+      <a class="btn btn-lg btn-outline-primary" href="sale.view.php" role="button">Ir a Modulo Ventas &raquo;</a>
     </div>
   </main>
 
