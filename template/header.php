@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="shadow-lg p-3 mb-5 bg-white rounded">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary" >
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light" >
             <a class="navbar-brand" href="#">OnlineStore</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                     <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Modulo Productos<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="product.view.php">Modulo Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Modulo Clientes<span class="sr-only">(current)</span></a>
