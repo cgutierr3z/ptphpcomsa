@@ -17,7 +17,6 @@
     <!-- Custom styles for this template -->
     <link href="css/navbar-top-fixed.css" rel="stylesheet">
   </head>
-  </head>
   <body>
     <div class="shadow-lg p-3 mb-5 bg-white rounded">
         <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light" >
