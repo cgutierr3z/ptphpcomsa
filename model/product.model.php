@@ -108,6 +108,30 @@ class ProductModel {
         }
     }
 
+    public function editStock(ProductModel $data){
+        try{
+            $sql = "UPDATE product SET 
+                        stock   = ?
+                    WHERE uid = ?";
+
+            $stm =  $this->pdo->prepare($sql);
+            
+            $stm->execute(
+                array(
+                    $data->__GET('stock'),
+                    $data->__GET('uid')
+                )
+            );
+
+            $_SESSION['error'] = false;
+            $_SESSION['message'] = ( $stm ) ? 'STOCK DE PRODUCTO EDITADO CON EXITO' : 'NO SE PUDO EDITAR EL STOCK DE PRODUCTO';	
+
+        } catch (Exception $e){
+            $_SESSION['error'] = true;
+            $_SESSION['message'] = "ERROR: actualizando stock de producto" . $e->getMessage();
+        }
+    }
+
     public function add(ProductModel $data){
         try{
             $sql = "INSERT INTO product (pname,refcode,price,stock) VALUES (?, ?, ?, ?)";
