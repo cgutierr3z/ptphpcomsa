@@ -28,7 +28,7 @@ $ven = new SaleModel();
             $_SESSION['message'] = 'STOCK DE PRODUCTO ACTUALIZADO';
         }else{
             $_SESSION['error'] = true;
-            $_SESSION['message'] = 'LA CANTIDAD DE ITEMS SUPERA EL STOCK DISPONIBLE DISPPONIBLE DEL PRODUCTO';
+            $_SESSION['message'] = 'LA CANTIDAD DE ITEMS DE LA VENTA SUPERA EL STOCK DISPONIBLE DEL PRODUCTO';
             header('Location: ../view/sale.view.php');
             exit();
         }
