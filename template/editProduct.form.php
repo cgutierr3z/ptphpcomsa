@@ -7,7 +7,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
 
-            <form action='../controller/product.crud.php' method='post' class="needs-validation" novalidate>
+            <form action='../controller/product.crud.php' method='post' class="needs-validation" >
 
                 <div class="modal-body">
                     <div class="container-fluid">

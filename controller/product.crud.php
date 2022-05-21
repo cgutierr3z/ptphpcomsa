@@ -8,25 +8,24 @@ $prod = new ProductModel();
 	// $_POST['update'] actualizar
 	// $_POST['delete'] eliminar
 	if (isset($_POST['add'])) {
+      $prod->__SET('pname',   $_REQUEST['pname']);
+      $prod->__SET('refcode', $_REQUEST['refcode']);
+      $prod->__SET('price',   $_REQUEST['price']);
+      $prod->__SET('stock',   $_REQUEST['stock']);
 
-        $prod->__SET('pname',   $_REQUEST['pname']);
-        $prod->__SET('refcode', $_REQUEST['refcode']);
-        $prod->__SET('price',   $_REQUEST['price']);
-        $prod->__SET('stock',   $_REQUEST['stock']);
-
-        $prod->add($prod);
-        header('Location: ../view/product.view.php');
+      $prod->add($prod);
+      header('Location: ../view/product.view.php');
     }elseif (isset($_POST['edit'])) {
-        $prod->__SET('uid',     $_REQUEST['uid']); 
-        $prod->__SET('pname',   $_REQUEST['pname']); 
-        $prod->__SET('refcode', $_REQUEST['refcode']);
-        $prod->__SET('price',   $_REQUEST['price']);
-        $prod->__SET('stock',   $_REQUEST['stock']);
+      $prod->__SET('uid',     $_REQUEST['uid']); 
+      $prod->__SET('pname',   $_REQUEST['pname']); 
+      $prod->__SET('refcode', $_REQUEST['refcode']);
+      $prod->__SET('price',   $_REQUEST['price']);
+      $prod->__SET('stock',   $_REQUEST['stock']);
 
-        $prod->edit($prod);
-        header('Location: ../view/product.view.php');
+      $prod->edit($prod);
+      header('Location: ../view/product.view.php');
     }elseif(isset($_POST['delete'])) {
-		$prod->delete($_POST['uid']);
-		header('Location: ../view/product.view.php');
-  }
+      $prod->delete($_POST['uid']);
+      header('Location: ../view/product.view.php');
+    }
 ?>

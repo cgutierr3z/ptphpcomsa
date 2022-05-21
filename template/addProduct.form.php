@@ -11,7 +11,7 @@
 
                 <div class="modal-body">
                     <div class="container-fluid">
-                        
+
                         <div class="form-row">
                             <div class="col-md-6 mb-4">
                                 <label for="validationCustom01">Nombre</label>
@@ -73,7 +73,7 @@
                 });
             }, false);
             })();
-                    </script>
+            </script>
 
         </div>
     </div>
