@@ -89,7 +89,7 @@ $producto = new ProductModel();
             $sql = "SELECT COUNT(uid) AS compras, uidProduct AS producto FROM sale GROUP BY uidProduct ORDER BY compras DESC LIMIT 5";
             $stm = $pdo->query($sql);
             $stm->execute();
-            $report1 = $stm->fetchAll(PDO::FETCH_OBJ);
+            $report2 = $stm->fetchAll(PDO::FETCH_OBJ);
             
             #print_r($report1);
         }catch(Exception $e){
@@ -97,7 +97,7 @@ $producto = new ProductModel();
             $_SESSION['message'] = "ERROR: listando las ventas" . $e->getMessage();
         }
 
-        foreach($report1 as $ven) { 
+        foreach($report2 as $ven) { 
         ?>
             <tr>
                 <td><?php echo $ven->producto; ?> <?php echo $producto->get($ven->producto)->__GET('pname'); ?> </td>
@@ -109,7 +109,51 @@ $producto = new ProductModel();
         <tbody>
         <tfoot>
             <tr>
+                <th>PRODUCTO</th>
+                <th>COMPRAS</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h1>Reporte 5 Clientes, Productos total compras </h1>
+    <table class="table table-hover" style="width:100%">
+        <thead>
+            <tr>
                 <th>CLIENTE</th>
+                <th>PRODUCTO</th>
+                <th>COMPRAS</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php 
+        
+        try{
+            $sql = "SELECT SUM(totalPrice) AS compras, uidProduct AS producto, uidCustomer AS cliente FROM sale GROUP BY cliente, producto ORDER BY compras DESC LIMIT 5";
+            $stm = $pdo->query($sql);
+            $stm->execute();
+            $report3 = $stm->fetchAll(PDO::FETCH_OBJ);
+            
+            #print_r($report1);
+        }catch(Exception $e){
+            $_SESSION['error'] = true;
+            $_SESSION['message'] = "ERROR: listando las ventas" . $e->getMessage();
+        }
+
+        foreach($report3 as $ven) { 
+        ?>
+            <tr>
+                <td><?php echo $ven->cliente; ?> <?php echo $cliente->get($ven->cliente)->__GET('fname'); ?> <?php echo $cliente->get($ven->cliente)->__GET('lname'); ?></td>
+                <td><?php echo $ven->producto; ?> <?php echo $producto->get($ven->producto)->__GET('pname'); ?> </td>
+                <td>$<?php echo $ven->compras; ?></td>
+            </tr>
+        <?php 
+        }
+        ?>
+        <tbody>
+        <tfoot>
+            <tr>
+                <th>CLIENTE</th>
+                <th>PRODUCTO</th>
                 <th>COMPRAS</th>
             </tr>
         </tfoot>
