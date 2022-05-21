@@ -42,6 +42,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="reports.php">Reportes<span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../api">API<span class="sr-only">(current)</span></a>
+                </li>
                 </ul>
             </div>
         </nav>
