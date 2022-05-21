@@ -51,6 +51,14 @@ $ven = new SaleModel();
         $ven->edit($ven);
         header('Location: ../view/sale.view.php');
     }elseif(isset($_POST['delete'])) {
+
+        $v = $ven->get($_POST['uid']);
+        $producto = new ProductModel();
+        $prod = $producto->get($v->__GET('uidProduct'));
+        $nstock =  ($prod->__GET('stock') + $v->__GET('nItems'));
+        $prod->__SET('stock',   $nstock);
+        $prod->editStock($prod);
+
 		$ven->delete($_POST['uid']);
 		header('Location: ../view/sale.view.php');
   }

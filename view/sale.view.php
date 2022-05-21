@@ -100,7 +100,7 @@ $listaProductos=$producto->getAll();
                                         
             </div>
             <div class="modal-footer">
-                <form action='../controller/customer.crud.php' method="post">
+                <form action='../controller/sale.crud.php' method="post">
 
                     <div class="form-group">
                         <input type="hidden" class="form-control" name="uid" id="recipient-name">

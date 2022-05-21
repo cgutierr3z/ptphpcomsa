@@ -70,7 +70,7 @@ class SaleModel {
             $stm->execute(array($uid));
 
             $_SESSION['error'] = false;
-            $_SESSION['message'] = ( $stm ) ? 'VENTA ELIMINADO CON EXITO' : 'NO SE PUDO ELIMIAR LA VENTA';
+            $_SESSION['message'] = ( $stm ) ? 'VENTA ELIMINADA Y STOCK DE PRODUCTO RESTAURADO CON EXITO' : 'NO SE PUDO ELIMIAR LA VENTA';
 
         } catch (Exception $e){
             $_SESSION['error'] = true;
