@@ -31,7 +31,7 @@
     
     <script>
       $(document).ready(function () {
-        $('#tableProductos').DataTable({
+        $('#tables').DataTable({
             scrollX: true,
         });
       });

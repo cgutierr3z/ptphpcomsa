@@ -29,7 +29,7 @@ $listaProductos=$producto->getAll();
 	}
     ?>
 
-    <table id="tableProductos" class="display" style="width:100%">
+    <table id="tables" class="table table-hover display" style="width:100%">
         <thead>
           <tr>
               <th>UID</th>
