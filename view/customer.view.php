@@ -18,11 +18,10 @@ $listaClientes=$cliente->getAll();
 	if(isset($_SESSION['message'])){
 	?>
         <div class="alert alert-<?php echo ($_SESSION['error']) ?  "danger" :  "success"; ?> alert-dismissible fade show" role="alert">
-            <?php echo $_SESSION['message']; ?>
-
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+          <b><?php echo $_SESSION['message']; ?></b>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
 	<?php
 		unset($_SESSION['message']);
