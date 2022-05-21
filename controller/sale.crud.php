@@ -24,7 +24,7 @@ $ven = new SaleModel();
 
         if($prod->__GET('stock') >= $_REQUEST['nItems']){
             $nstock = ($prod->__GET('stock') - $_REQUEST['nItems']);
-            $_SESSION['error'] = true;
+            $_SESSION['error'] = false;
             $_SESSION['message'] = 'STOCK DE PRODUCTO ACTUALIZADO';
         }else{
             $_SESSION['error'] = true;
