@@ -39,6 +39,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="sale.view.php">Modulo Ventas<span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reports.php">Reportes<span class="sr-only">(current)</span></a>
+                </li>
                 </ul>
             </div>
         </nav>
