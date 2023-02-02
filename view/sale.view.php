@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../template/header.php";
 include('../model/sale.model.php');
 include('../model/customer.model.php');
@@ -8,10 +9,10 @@ $venta = new SaleModel();
 $listaVentas=$venta->getAll();
 
 $cliente = new CustomerModel();
-$listaClientes=$cliente->getAll();
+//$listaClientes=$cliente->getAll();
 
 $producto = new ProductModel();
-$listaProductos=$producto->getAll();
+//$listaProductos=$producto->getAll();
 
 ?>
   <!-- Aquí el código HTML de la aplicación -->
@@ -23,7 +24,7 @@ $listaProductos=$producto->getAll();
     </h1>
 
     <?php 
-	session_start();
+	
 	if(isset($_SESSION['message'])){
 	?>
         <div class="alert alert-<?php echo ($_SESSION['error']) ?  "danger" :  "success"; ?> alert-dismissible fade show" role="alert">
@@ -61,10 +62,7 @@ $listaProductos=$producto->getAll();
                 <td><?php echo $ven->__GET('totalPrice'); ?></td>
                 
                 <td>
-                    <a class="btn btn-outline-primary" role="button" href="#edit_<?php echo $ven->__GET('uid'); ?>" data-toggle="modal">
-                    <i class="bi bi-pencil-square"></i>
-                    </a>
-                
+                                    
                     <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" data-whatever="<?php echo $ven->__GET('uid'); ?>">
                     <i class="bi bi-trash-fill"></i>
                     </button>
@@ -91,7 +89,7 @@ $listaProductos=$producto->getAll();
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">¿Continuar con la eliminación del cliente?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">¿Continuar con la eliminación de la venta?</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -107,7 +105,7 @@ $listaProductos=$producto->getAll();
                         <input type='hidden' name='delete' value='delete'>
                     </div>
                     <button type="button" class="btn btn-default" data-dismiss="modal"> Cancelar</button>
-                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"> </i>Eliminar Producto</button>
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"> </i>Eliminar Venta</button>
                 </form>
             </div>
             

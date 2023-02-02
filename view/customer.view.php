@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../template/header.php";
 include('../model/customer.model.php');
 
@@ -14,17 +15,17 @@ $listaClientes=$cliente->getAll();
     </h1>
 
     <?php 
-	session_start();
-	if(isset($_SESSION['message'])){
-	?>
-        <div class="alert alert-<?php echo ($_SESSION['error']) ?  "danger" :  "success"; ?> alert-dismissible fade show" role="alert">
-          <b><?php echo $_SESSION['message']; ?></b>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-	<?php
-		unset($_SESSION['message']);
+    
+    if(isset($_SESSION['message'])){
+    ?>
+          <div class="alert alert-<?php echo ($_SESSION['error']) ?  "danger" :  "success"; ?> alert-dismissible fade show" role="alert">
+            <b><?php echo $_SESSION['message']; ?></b>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+    <?php
+      unset($_SESSION['message']);
 	}
     ?>
 
@@ -97,7 +98,7 @@ $listaClientes=$cliente->getAll();
                         <input type='hidden' name='delete' value='delete'>
                     </div>
                     <button type="button" class="btn btn-default" data-dismiss="modal"> Cancelar</button>
-                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"> </i>Eliminar Producto</button>
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"> </i>Eliminar Cliente</button>
                 </form>
             </div>
             

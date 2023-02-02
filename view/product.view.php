@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../template/header.php";
 include('../model/product.model.php');
 
@@ -14,18 +15,18 @@ $listaProductos=$producto->getAll();
     </h1>
 
     <?php 
-	session_start();
-	if(isset($_SESSION['message'])){
-	?>
-        <div class="alert alert-<?php echo ($_SESSION['error']) ?  "danger" :  "success"; ?> alert-dismissible fade show" role="alert">
-          <b><?php echo $_SESSION['message']; ?></b>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-	<?php
-		unset($_SESSION['message']);
-	}
+	
+    if(isset($_SESSION['message'])){
+    ?>
+          <div class="alert alert-<?php echo ($_SESSION['error']) ?  "danger" :  "success"; ?> alert-dismissible fade show" role="alert">
+            <b><?php echo $_SESSION['message']; ?></b>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+    <?php
+      unset($_SESSION['message']);
+    }
     ?>
 
     <table id="tables" class="table table-hover display" style="width:100%">

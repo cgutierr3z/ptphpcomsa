@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "../template/header.php"; 
 include('../model/sale.model.php');
 include('../model/customer.model.php');
@@ -19,7 +20,7 @@ $producto = new ProductModel();
   <main role="main" class="container" >
 
     <?php 
-	session_start();
+	
 	if(isset($_SESSION['message'])){
 	?>
         <div class="alert alert-<?php echo ($_SESSION['error']) ?  "danger" :  "success"; ?> alert-dismissible fade show" role="alert">

@@ -18,6 +18,7 @@
 
                                 <select class="form-control selectpicker" data-live-search="true" name="uidCustomer" required>
                                     <?php
+                                    $listaClientes=$cliente->getAll();
                                     foreach($listaClientes as $cli) {
                                     ?>
                                     <option value="<?php echo $cli->__GET('uid') ?>" data-tokens="<?php echo $cli->__GET('uid') ?>"> 
@@ -38,6 +39,7 @@
 
                                 <select class="form-control selectpicker" data-live-search="true" name="uidProduct" required>
                                     <?php
+                                    $listaProductos=$producto->getAll();
                                     foreach($listaProductos as $prod) {
                                         if($prod->__GET('stock')>0){
                                     ?>
